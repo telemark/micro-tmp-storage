@@ -3,7 +3,7 @@
 
 # micro-tmp-storage
 
-Microservice for storing data temporarily.
+Microservice for storing key/value data temporarily.
 
 Default ttl is 60 seconds
 
