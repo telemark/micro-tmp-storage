@@ -3,6 +3,8 @@
 
 # micro-tmp-storage
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/telemark/micro-tmp-storage.svg)](https://greenkeeper.io/)
+
 Microservice for storing key/value data temporarily.
 
 Default ttl is 60 seconds
