@@ -40,6 +40,7 @@ module.exports = async (request, response) => {
     response.setHeader('Access-Control-Allow-Methods', 'GET')
     send(response, code, result)
   } else {
+    response.setHeader('Content-Type', 'text/html')
     const readme = readFileSync('./README.md', 'utf-8')
     const html = marked(readme)
     send(response, 200, html)
