@@ -1,9 +1,8 @@
 [![Build Status](https://travis-ci.org/telemark/micro-tmp-storage.svg?branch=master)](https://travis-ci.org/telemark/micro-tmp-storage)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
+[![Greenkeeper badge](https://badges.greenkeeper.io/telemark/micro-tmp-storage.svg)](https://greenkeeper.io/)
 
 # micro-tmp-storage
-
-[![Greenkeeper badge](https://badges.greenkeeper.io/telemark/micro-tmp-storage.svg)](https://greenkeeper.io/)
 
 Microservice for storing key/value data temporarily.
 

@@ -1,7 +1,7 @@
 {
   "name": "micro-tmp-storage",
   "description": "Temporary storage",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "license": "MIT",
   "private": true,
   "author": {
@@ -11,7 +11,7 @@
   },
   "main": "index.js",
   "engines": {
-    "node": ">=7.5.0"
+    "node": ">=7.8.0"
   },
   "scripts": {
     "test": "standard && nsp check && tap --reporter=spec test/**/*.js",
@@ -20,8 +20,7 @@
     "coveralls": "tap --cov --coverage-report=lcov test/**/*.js && cat coverage/lcov.info | coveralls",
     "setup": "npm install",
     "standard-fix": "standard --fix",
-    "start": "micro -p 8080",
-    "dev": "micro",
+    "start": "micro",
     "now-deploy": "npm test && now --npm --alias"
   },
   "keywords": [
@@ -39,7 +38,7 @@
     "url": "https://github.com/telemark/micro-tmp-storage/issues"
   },
   "now": {
-    "aliases": [
+    "alias": [
       "tmp.storage.micro.t-fk.no"
     ],
     "env": {
@@ -47,14 +46,14 @@
     }
   },
   "devDependencies": {
-    "coveralls": "2.11.16",
-    "nsp": "2.6.2",
+    "coveralls": "2.12.0",
+    "nsp": "2.6.3",
     "standard": "9.0.2",
-    "tap": "10.2.0"
+    "tap": "10.3.1"
   },
   "dependencies": {
     "marked": "0.3.6",
-    "micro": "7.0.6",
+    "micro": "7.3.0",
     "node-cache": "4.1.1",
     "uuid": "3.0.1"
   }
