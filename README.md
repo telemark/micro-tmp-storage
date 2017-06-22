@@ -32,10 +32,10 @@ returns
 
 ### GET
 
-#### ```/{key}```
+#### ```/storage/{key}``` or ```/{key}```
 
 ```bash
-$ curl -d https://tmp.storage.t-fk.win/b72545e8-6b58-4672-ad87-4096bb9da778
+$ curl -d https://tmp.storage.win/storage/b72545e8-6b58-4672-ad87-4096bb9da778
 ```
 
 returns 200 ok on success
@@ -64,4 +64,4 @@ returns 404 not found on failure
 
 [MIT](LICENSE)
 
-![alt text](https://robots.kebabstudios.party/micro-tmp-storage.png "Robohash image of micro-tmp-storage")
+![Robohash image of micro-tmp-storage](https://robots.kebabstudios.party/micro-tmp-storage.png "Robohash image of micro-tmp-storage")

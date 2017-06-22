@@ -9,7 +9,7 @@ const { parse } = require('url')
 const { send, json } = require('micro')
 
 module.exports = async (request, response) => {
-  const {pathname, query} = await parse(request.url, true)
+  const { pathname, query } = await parse(request.url, true)
   const data = request.method === 'POST' ? await json(request) : query
 
   if (request.method === 'POST') {
@@ -25,11 +25,11 @@ module.exports = async (request, response) => {
     }
 
     response.setHeader('Access-Control-Allow-Origin', '*')
-    response.setHeader('Access-Control-Allow-Methods', 'GET')
+    response.setHeader('Access-Control-Allow-Methods', 'GET, POST')
 
     send(response, 200, result)
   } else if (pathname !== '/') {
-    const key = pathname.replace('/', '')
+    const key = /storage/.test(pathname) ? pathname.replace('/storage/', '') : pathname.replace('/', '')
     const value = cache.get(key)
     const code = value ? 200 : 404
     const result = {
