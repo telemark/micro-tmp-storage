@@ -7,6 +7,7 @@ const marked = require('marked')
 const uid = require('uuid/v4')
 const { parse } = require('url')
 const { send, json } = require('micro')
+const logger = require('./lib/logger')
 
 module.exports = async (request, response) => {
   const { pathname, query } = await parse(request.url, true)
@@ -26,7 +27,7 @@ module.exports = async (request, response) => {
 
     response.setHeader('Access-Control-Allow-Origin', '*')
     response.setHeader('Access-Control-Allow-Methods', 'GET, POST')
-
+    logger('info', ['index', 'POST', key])
     send(response, 200, result)
   } else if (pathname !== '/') {
     const key = /storage/.test(pathname) ? pathname.replace('/storage/', '') : pathname.replace('/', '')
@@ -38,11 +39,13 @@ module.exports = async (request, response) => {
     }
     response.setHeader('Access-Control-Allow-Origin', '*')
     response.setHeader('Access-Control-Allow-Methods', 'GET')
+    logger('info', ['index', 'GET', 'key', key, 'code', code])
     send(response, code, result)
   } else {
     response.setHeader('Content-Type', 'text/html')
     const readme = readFileSync('./README.md', 'utf-8')
     const html = marked(readme)
+    logger('info', ['index', 'GET', 'frontpage'])
     send(response, 200, html)
   }
 }
