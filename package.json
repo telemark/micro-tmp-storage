@@ -57,10 +57,10 @@
     "test-listen": "1.1.0"
   },
   "dependencies": {
-    "marked": "0.3.9",
+    "marked": "0.3.12",
     "micro": "9.1.0",
     "node-cache": "4.1.1",
-    "uuid": "3.1.0",
+    "uuid": "3.2.1",
     "winston": "^2.3.1"
   }
 }
