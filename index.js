@@ -1,4 +1,4 @@
-const readFileSync = require('fs').readFileSync
+const { readFile } = require('fs').promises
 const NodeCache = require('node-cache')
 const cache = new NodeCache()
 const marked = require('marked')
@@ -41,9 +41,8 @@ module.exports = async (request, response) => {
     send(response, code, result)
   } else {
     response.setHeader('Content-Type', 'text/html')
-    const readme = readFileSync('./README.md', 'utf-8')
-    const html = marked(readme)
+    const readme = await readFile('./README.md', 'utf-8')
     logger('info', ['index', 'GET', 'frontpage'])
-    send(response, 200, html)
+    send(response, 200, marked(readme))
   }
 }
