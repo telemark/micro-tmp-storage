@@ -1,5 +1,3 @@
-'use strict'
-
 const readFileSync = require('fs').readFileSync
 const NodeCache = require('node-cache')
 const cache = new NodeCache()

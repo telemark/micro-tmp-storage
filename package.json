@@ -11,10 +11,10 @@
   },
   "main": "index.js",
   "engines": {
-    "node": ">=8.9.4"
+    "node": ">=10.13.0"
   },
   "scripts": {
-    "test": "standard && ava",
+    "test": "standard && npm audit && ava",
     "test-offline": "standard && ava",
     "coverage": "nyc ava",
     "coveralls": "nyc ava && nyc report --reporter=lcov && cat coverage/lcov.info | coveralls",
