@@ -34,7 +34,7 @@ returns
 #### ```/storage/{key}``` or ```/{key}```
 
 ```bash
-$ curl -d https://tmp.storage.win/storage/b72545e8-6b58-4672-ad87-4096bb9da778
+$ curl https://tmp.storage.win/storage/b72545e8-6b58-4672-ad87-4096bb9da778
 ```
 
 returns 200 ok on success
