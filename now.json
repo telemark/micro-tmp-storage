@@ -1,0 +1,10 @@
+{
+  "veresion": 1,
+  "alias": [
+    "tmp.service.t-fk.no"
+  ],
+  "env": {
+    "NODE_ENV": "production"
+  },
+  "type": "docker"
+}
