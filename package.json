@@ -39,15 +39,6 @@
     "url": "https://github.com/telemark/micro-tmp-storage/issues"
   },
   "homepage": "https://github.com/telemark/micro-tmp-storage#readme",
-  "now": {
-    "alias": [
-      "tmp.service.t-fk.no"
-    ],
-    "env": {
-      "NODE_ENV": "production"
-    },
-    "type": "npm"
-  },
   "devDependencies": {
     "axios": "0.18.0",
     "ava": "0.25.0",
