@@ -1,10 +1,10 @@
 const { readFile } = require('fs').promises
-const NodeCache = require('node-cache')
-const cache = new NodeCache()
 const marked = require('marked')
-const uid = require('uuid/v4')
+const uuid = require('uuid-random')
 const { parse } = require('url')
 const { send, json } = require('micro')
+const saveToStorage = require('./lib/save-to-storage')
+const getFromStorage = require('./lib/get-from-storage')
 const logger = require('./lib/logger')
 
 module.exports = async (request, response) => {
@@ -14,8 +14,8 @@ module.exports = async (request, response) => {
   if (request.method === 'POST') {
     const value = data.value || ''
     const ttl = data.ttl ? parseInt(data.ttl, 10) : 60
-    const key = uid()
-    const success = cache.set(key, value, ttl)
+    const key = uuid()
+    const success = await saveToStorage({ key: key, value: value })
     const result = {
       key: key,
       value: value,
@@ -29,11 +29,11 @@ module.exports = async (request, response) => {
     send(response, 200, result)
   } else if (pathname !== '/') {
     const key = /storage/.test(pathname) ? pathname.replace('/storage/', '') : pathname.replace('/', '')
-    const value = cache.get(key)
-    const code = value ? 200 : 404
+    const data = await getFromStorage(key)
+    const code = data !== null ? 200 : 404
     const result = {
       key: key,
-      value: value || false
+      value: data !== null ? data.value : false
     }
     response.setHeader('Access-Control-Allow-Origin', '*')
     response.setHeader('Access-Control-Allow-Methods', 'GET')

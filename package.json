@@ -51,8 +51,8 @@
   "dependencies": {
     "marked": "0.6.0",
     "micro": "9.3.3",
-    "node-cache": "4.2.0",
-    "uuid": "3.3.2",
+    "mongojs": "2.6.0",
+    "uuid-random": "1.0.6",
     "winston": "2.4.4"
   }
 }

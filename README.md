@@ -55,10 +55,6 @@ returns 404 not found on failure
 }
 ```
 
-## Code
-
-[GitHub](https://github.com/telemark/micro-tmp-storage)
-
 ## License
 
 [MIT](LICENSE)
