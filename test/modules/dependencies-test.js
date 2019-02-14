@@ -1,10 +1,13 @@
 const test = require('ava')
-const pkg = require('../../package.json')
-const dependencies = pkg.dependencies || {}
-const dropModules = []
-const isDropped = (module) => !dropModules.includes(module)
+const { dependencies, devDependencies } = require('../../package.json')
+const dropModules = ['micro-dev']
+const isDropped = module => !dropModules.includes(module)
 
-if (Object.keys(dependencies).length > 0) {
+test('ava works ok', t => {
+  t.true(true)
+})
+
+if (Object.keys(dependencies).filter(isDropped).length > 0) {
   Object.keys(dependencies).filter(isDropped).forEach((dependency) => {
     test(`${dependency} loads ok`, t => {
       const module = require(dependency)
@@ -13,6 +16,19 @@ if (Object.keys(dependencies).length > 0) {
   })
 } else {
   test('no dependecies to test', t => {
+    t.truthy(true)
+  })
+}
+
+if (Object.keys(devDependencies).filter(isDropped).length > 0) {
+  Object.keys(devDependencies).filter(isDropped).forEach((dependency) => {
+    test(`${dependency} loads ok`, t => {
+      const module = require(dependency)
+      t.truthy(module)
+    })
+  })
+} else {
+  test('no devDependecies to test', t => {
     t.truthy(true)
   })
 }
