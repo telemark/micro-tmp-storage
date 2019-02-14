@@ -1,4 +1,4 @@
-const { readFile } = require('fs').promises
+const { readFileSync } = require('fs')
 const marked = require('marked')
 const uuid = require('uuid-random')
 const { parse } = require('url')
@@ -41,7 +41,7 @@ module.exports = async (request, response) => {
     send(response, code, result)
   } else {
     response.setHeader('Content-Type', 'text/html')
-    const readme = await readFile('./README.md', 'utf-8')
+    const readme = readFileSync(`${__dirname}/README.md`, 'utf-8')
     logger('info', ['index', 'GET', 'frontpage'])
     send(response, 200, marked(readme))
   }

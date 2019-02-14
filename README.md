@@ -55,6 +55,12 @@ returns 404 not found on failure
 }
 ```
 
+## Environment
+
+```
+MONGODB_CONNECTION=your-mongodb-connection-string
+```
+
 ## License
 
 [MIT](LICENSE)
