@@ -2,7 +2,7 @@
   "version": 2,
   "name": "micro-tmp-storage",
   "alias": [
-    "midlertidig.service.t-fk.no"
+    "tmp.storage.service.t-fk.no"
   ],
   "env": {
     "NODE_ENV": "production",
