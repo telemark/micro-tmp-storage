@@ -6,7 +6,8 @@
   ],
   "env": {
     "NODE_ENV": "production",
-    "MONGODB_CONNECTION": "@azure-tmpstorage-connection"
+    "MONGODB_CONNECTION": "@azure-cosmos-felles-connection",
+    "MONGODB_COLLECTION": "tmpstorage"
   },
   "builds": [
     { "src": "/index.js", "use": "@now/node" }
