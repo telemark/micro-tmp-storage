@@ -1,5 +1,3 @@
-const { readFileSync } = require('fs')
-const marked = require('marked')
 const uuid = require('uuid-random')
 const { parse } = require('url')
 const { send, json } = require('micro')
@@ -39,10 +37,5 @@ module.exports = async (request, response) => {
     response.setHeader('Access-Control-Allow-Methods', 'GET')
     logger('info', ['index', 'GET', 'key', key, 'code', code])
     send(response, code, result)
-  } else {
-    response.setHeader('Content-Type', 'text/html')
-    const readme = readFileSync(`${__dirname}/README.md`, 'utf-8')
-    logger('info', ['index', 'GET', 'frontpage'])
-    send(response, 200, marked(readme))
   }
 }
