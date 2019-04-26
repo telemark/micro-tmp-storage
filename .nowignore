@@ -1,4 +1,5 @@
 .dockerignore
+.github
 .env
 .travis.yml
 Dockerfile
