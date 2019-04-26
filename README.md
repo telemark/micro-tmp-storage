@@ -60,6 +60,7 @@ returns 404 not found on failure
 ```
 MONGODB_CONNECTION=your-mongodb-connection-string
 MONGODB_COLLECTION=your-mongodb-collection-name
+MONGODB_NAME=your-mongodb-db-name
 ```
 
 ## License
