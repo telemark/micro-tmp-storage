@@ -7,7 +7,7 @@
   ],
   "env": {
     "NODE_ENV": "production",
-    "MONGODB_CONNECTION": "@azure-cosmos-felles-connection",
+    "MONGODB_CONNECTION": "@db-tfkcosmos-connection",
     "MONGODB_COLLECTION": "tmpstorage",
     "MONGODB_NAME": "felles"
   },
