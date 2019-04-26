@@ -50,7 +50,7 @@
   },
   "dependencies": {
     "micro": "9.3.3",
-    "mongojs": "2.6.0",
+    "mongodb": "3.2.3",
     "uuid-random": "1.0.8"
   }
 }
