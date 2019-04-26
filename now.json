@@ -1,6 +1,7 @@
 {
   "version": 2,
   "name": "micro-tmp-storage",
+  "scope": "telemark",
   "alias": [
     "tmp.storage.service.t-fk.no"
   ],
