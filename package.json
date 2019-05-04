@@ -49,7 +49,7 @@
     "test-listen": "1.1.0"
   },
   "dependencies": {
-    "micro": "9.3.3",
+    "micro": "9.3.4",
     "mongodb": "3.2.3",
     "uuid-random": "1.0.8"
   }
