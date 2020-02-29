@@ -40,7 +40,7 @@
   },
   "homepage": "https://github.com/telemark/micro-tmp-storage#readme",
   "devDependencies": {
-    "axios": "0.18.1",
+    "axios": "0.19.2",
     "ava": "1.4.1",
     "coveralls": "3.0.3",
     "micro-dev": "3.0.0",
