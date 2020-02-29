@@ -1,13 +1,12 @@
 const uuid = require('uuid-random')
-const { parse } = require('url')
 const { send, json } = require('micro')
 const saveToStorage = require('./lib/save-to-storage')
 const getFromStorage = require('./lib/get-from-storage')
 const logger = require('./lib/logger')
 
 module.exports = async (request, response) => {
-  const { pathname, query } = await parse(request.url, true)
-  const data = request.method === 'POST' ? await json(request) : query
+  const pathname = request.url
+  const data = request.method === 'POST' ? await json(request) : await request.query
 
   if (request.method === 'POST') {
     const value = data.value || ''
