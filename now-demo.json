@@ -1,0 +1,33 @@
+{
+  "version": 2,
+  "name": "micro-tmp-storage",
+  "scope": "telemark-dev",
+  "alias": [
+    "tmp.storage.tjeneste.win"
+  ],
+  "env": {
+    "NODE_ENV": "production",
+    "MONGODB_CONNECTION": "@db-tmpstorage-connection",
+    "MONGODB_COLLECTION": "ids",
+    "MONGODB_NAME": "tmpstorage"
+  },
+  "builds": [
+    { 
+      "src": "/index.js",
+      "use": "@now/node" 
+    },
+    {
+      "src": "*.md",
+      "use": "@now/md"
+    }
+  ],
+  "routes": [
+    { "src": "/docs",
+      "dest": "/README.html"
+    },
+    { "src": "/favicon.ico",
+      "dest": "/static/favicon.ico"
+    },
+    { "src": "/(.*)", "dest": "/index.js" }
+  ]
+}
