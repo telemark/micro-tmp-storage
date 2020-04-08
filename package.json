@@ -21,7 +21,8 @@
     "standard-fix": "standard --fix",
     "start": "micro",
     "dev": "micro-dev",
-    "deploy": "npm test && now --target production",
+    "deploy": "npm test && now --confirm --prod",
+    "deploy-demo": "npm test && now --local-config now-demo.json --confirm --prod",
     "refresh": "rm -rf node_modules && rm package-lock.json && npm install"
   },
   "keywords": [
